@@ -2,6 +2,7 @@ import Welcome from "./components/Welcome";
 import React, { ComponentProps } from "react";
 import TimeEntryView from "./components/TimeEntryView";
 import { TimeEntry } from "./domain/TimeEntry";
+import TimeEntryForm from "./components/TimeEntryForm";
 
 // Example on how to get the type of props of a component
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
@@ -15,12 +16,13 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <h1>Hallo React aus anderer Datei!</h1>
       <Welcome city="Düsseldorf" />
       <Welcome />
       <TimeEntryView timeEntry={timeEntry} />
-    </>
+      <TimeEntryForm />
+    </div>
   );
 }
 

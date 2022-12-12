@@ -10,6 +10,7 @@ function App() {
     <>
       <h1>Hallo React aus anderer Datei!</h1>
       <Welcome city="Düsseldorf" />
+      <Welcome />
       <TimeEntryView comment="React lernen" />
       <TimeEntryView comment="React meistern" />
     </>

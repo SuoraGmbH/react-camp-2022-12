@@ -7,7 +7,7 @@ import { TimeEntry } from "./domain/TimeEntry";
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
 
 function App() {
-  const timeEntry: ComponentProps<typeof TimeEntryView>["timeEntry"] = {
+  const timeEntry: TimeEntry = {
     id: "123",
     comment: "DSDSA",
     start: new Date(),

@@ -4,8 +4,8 @@ interface Props {
   city: string;
 }
 
-function Welcome({ city }: Props): JSX.Element {
+const Welcome: React.FunctionComponent<Props> = ({ city }) => {
   return <h1>Hello {city}</h1>;
-}
+};
 
 export default Welcome;

@@ -1,4 +1,4 @@
-import Welcome from "./Welcome";
+import Welcome from "./components/Welcome";
 import React, { ComponentProps } from "react";
 import TimeEntryView from "./components/TimeEntryView";
 

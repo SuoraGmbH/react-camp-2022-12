@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TimeEntryForm: React.FunctionComponent = () => {
+const TimeEntryForm: React.FunctionComponent<any> = (props) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
@@ -15,7 +15,10 @@ const TimeEntryForm: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={inputValue} />
+      <label>
+        Comment:
+        <input onChange={handleChange} value={inputValue} />
+      </label>
       {inputValue}
       <button type="submit">Submit</button>
     </form>

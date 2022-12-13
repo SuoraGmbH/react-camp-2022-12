@@ -11,19 +11,15 @@ import TimeEntryList from "./components/TimeEntryList";
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
 
 function App() {
-  const timeEntry: TimeEntry = {
-    id: "123",
-    comment: "DSDSA",
-    start: new Date(),
-    end: new Date(),
+  const handleAddTimeEntry = (timeEntry: TimeEntry) => {
+    console.log(timeEntry, "hallo aus der app");
   };
 
   return (
     <div>
       <TimeEntryList />
       <hr />
-      <TimeEntryView timeEntry={timeEntry} />
-      <TimeEntryForm />
+      <TimeEntryForm onAddTimeEntry={console.log} />
     </div>
   );
 }

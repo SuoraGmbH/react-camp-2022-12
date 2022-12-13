@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { TimeEntry } from "../domain/TimeEntry";
 
-const TimeEntryForm: React.FunctionComponent<any> = (props) => {
+interface Props {
+  onAddTimeEntry: (timeEntry: TimeEntry) => void;
+}
+
+const TimeEntryForm: React.FunctionComponent<Props> = (props) => {
   props.onAddTimeEntry("ansoddass");
 
   const [inputValue, setInputValue] = useState("");

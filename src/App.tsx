@@ -19,9 +19,7 @@ function App() {
     <div>
       <TimeEntryList />
       <hr />
-      <TimeEntryForm
-        onAddTimeEntry={(timeEntry: any) => console.log(timeEntry)}
-      />
+      <TimeEntryForm onAddTimeEntry={handleAddTimeEntry} />
     </div>
   );
 }

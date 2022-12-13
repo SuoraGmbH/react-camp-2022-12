@@ -5,14 +5,19 @@ interface Props {
   onAddTimeEntry: (timeEntry: TimeEntry) => void;
 }
 
-const TimeEntryForm: React.FunctionComponent<Props> = (props) => {
-  props.onAddTimeEntry("ansoddass");
-
+const TimeEntryForm: React.FunctionComponent<Props> = ({ onAddTimeEntry }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-    console.log("Hello World");
     event.preventDefault();
+
+    onAddTimeEntry({
+      id: new Date().toISOString(),
+      comment: inputValue,
+      start: new Date(),
+      end: new Date(),
+    });
+
     setInputValue("");
   };
 

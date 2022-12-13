@@ -19,11 +19,6 @@ function App() {
 
   return (
     <div>
-      <Counter />
-      <GithubRepoStats />
-      <h1>Hallo React aus anderer Datei!</h1>
-      <Welcome city="Düsseldorf" />
-      <Welcome />
       <TimeEntryView timeEntry={timeEntry} />
       <TimeEntryForm />
     </div>

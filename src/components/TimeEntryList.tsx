@@ -26,9 +26,9 @@ const TimeEntryList: React.FunctionComponent<Props> = () => {
 
   return (
     <ul>
-      {timeEntries.map((timeEntry) => {
-        return <li key={timeEntry.id}>{timeEntry.comment}</li>;
-      })}
+      {timeEntries.map((timeEntry) => (
+        <li key={timeEntry.id}>{timeEntry.comment}</li>
+      ))}
     </ul>
   );
 };

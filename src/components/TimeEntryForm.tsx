@@ -22,7 +22,7 @@ const TimeEntryForm: React.FunctionComponent<Props> = ({ onAddTimeEntry }) => {
   };
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setInputValue(event.target.value.toUpperCase().replace("A", "B"));
+    setInputValue(event.target.value);
   };
 
   return (

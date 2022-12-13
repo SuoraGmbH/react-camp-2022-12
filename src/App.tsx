@@ -7,29 +7,10 @@ import TimeEntryList from "./components/TimeEntryList";
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
 
 function App() {
-  const [timeEntries, setTimeEntries] = useState([
-    {
-      id: "dsahuoadsudaosuhhdoaus",
-      comment: "React lernen",
-      start: new Date(),
-      end: new Date(),
-    },
-    {
-      id: "kocxokpxcyopkxycopkcxy",
-      comment: "React meistern",
-      start: new Date(),
-      end: new Date(),
-    },
-    {
-      id: "cp9xyjnbu3",
-      comment: "React lehren",
-      start: new Date(),
-      end: new Date(),
-    },
-  ]);
+  const [timeEntries, setTimeEntries] = useState<TimeEntry[]>([]);
 
   const handleAddTimeEntry = (timeEntry: TimeEntry) => {
-    setTimeEntries([timeEntry]);
+    setTimeEntries([...timeEntries, timeEntry]);
   };
 
   return (

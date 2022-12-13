@@ -7,13 +7,34 @@ import TimeEntryList from "./components/TimeEntryList";
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
 
 function App() {
+  const timeEntries: TimeEntry[] = [
+    {
+      id: "dsahuoadsudaosuhhdoaus",
+      comment: "React lernen",
+      start: new Date(),
+      end: new Date(),
+    },
+    {
+      id: "kocxokpxcyopkxycopkcxy",
+      comment: "React meistern",
+      start: new Date(),
+      end: new Date(),
+    },
+    {
+      id: "cp9xyjnbu3",
+      comment: "React lehren",
+      start: new Date(),
+      end: new Date(),
+    },
+  ];
+
   const handleAddTimeEntry = (timeEntry: TimeEntry) => {
     console.log({ timeEntry }, "hallo aus der app");
   };
 
   return (
     <div>
-      <TimeEntryList />
+      <TimeEntryList timeEntries={timeEntries} />
       <hr />
       <TimeEntryForm onAddTimeEntry={handleAddTimeEntry} />
     </div>

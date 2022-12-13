@@ -7,4 +7,8 @@ describe("add", () => {
   test("1+2 should be 3", () => {
     expect(add(1, 2)).toBe(3);
   });
+
+  test("2+2 should be according to snapshot", () => {
+    expect(add(2, 2)).toMatchInlineSnapshot(`4`);
+  });
 });

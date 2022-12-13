@@ -5,7 +5,11 @@ interface Props {
 }
 
 const Welcome: React.FunctionComponent<Props> = ({ city = "Köln" }) => {
-  return <h1>Hello {city.toUpperCase()}</h1>;
+  return (
+    <div>
+      Hello <i>{city.toUpperCase()}</i>
+    </div>
+  );
 };
 
 export default Welcome;

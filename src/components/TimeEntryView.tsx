@@ -6,7 +6,11 @@ interface Props {
 }
 
 const TimeEntryView: React.FunctionComponent<Props> = ({ timeEntry }) => {
-  return <div>Kommentar: {timeEntry.comment}</div>;
+  return (
+    <div>
+      Kommentar: {timeEntry.comment} ({timeEntry.start.toLocaleTimeString()})
+    </div>
+  );
 };
 
 export default TimeEntryView;

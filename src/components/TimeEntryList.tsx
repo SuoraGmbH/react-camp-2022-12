@@ -1,5 +1,6 @@
 import React from "react";
 import { TimeEntry } from "../domain/TimeEntry";
+import TimeEntryView from "./TimeEntryView";
 
 interface Props {}
 const TimeEntryList: React.FunctionComponent<Props> = () => {
@@ -25,11 +26,11 @@ const TimeEntryList: React.FunctionComponent<Props> = () => {
   ];
 
   return (
-    <ul>
+    <div>
       {timeEntries.map((timeEntry) => (
-        <li key={timeEntry.id}>{timeEntry.comment}</li>
+        <TimeEntryView key={timeEntry.id} timeEntry={timeEntry} />
       ))}
-    </ul>
+    </div>
   );
 };
 

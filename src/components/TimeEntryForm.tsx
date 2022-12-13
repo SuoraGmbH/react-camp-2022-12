@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const TimeEntryForm: React.FunctionComponent<any> = (props) => {
+  props.onAddTimeEntry("ansoddass");
+
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {

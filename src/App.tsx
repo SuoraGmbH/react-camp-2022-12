@@ -19,7 +19,9 @@ function App() {
     <div>
       <TimeEntryList />
       <hr />
-      <TimeEntryForm onAddTimeEntry={console.log} />
+      <TimeEntryForm
+        onAddTimeEntry={(timeEntry: any) => console.log(timeEntry)}
+      />
     </div>
   );
 }

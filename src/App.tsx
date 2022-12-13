@@ -12,7 +12,7 @@ import TimeEntryList from "./components/TimeEntryList";
 
 function App() {
   const handleAddTimeEntry = (timeEntry: TimeEntry) => {
-    console.log(timeEntry, "hallo aus der app");
+    console.log({ timeEntry }, "hallo aus der app");
   };
 
   return (

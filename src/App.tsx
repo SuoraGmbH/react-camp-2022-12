@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import { TimeEntry } from "./domain/TimeEntry";
 import TimeEntryForm from "./components/TimeEntryForm";
 import TimeEntryList from "./components/TimeEntryList";
@@ -7,7 +7,7 @@ import TimeEntryList from "./components/TimeEntryList";
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
 
 function App() {
-  const timeEntries: TimeEntry[] = [
+  const [timeEntries, setTimeEntries] = useState([
     {
       id: "dsahuoadsudaosuhhdoaus",
       comment: "React lernen",
@@ -26,10 +26,10 @@ function App() {
       start: new Date(),
       end: new Date(),
     },
-  ];
+  ]);
 
   const handleAddTimeEntry = (timeEntry: TimeEntry) => {
-    console.log({ timeEntry }, "hallo aus der app");
+    setTimeEntries([timeEntry]);
   };
 
   return (

@@ -18,15 +18,17 @@ afterAll(() => {
 });
 
 describe("<GithubRepoStats />", () => {
-  // test("Smoke Test", () => {
-  //   render(<GithubRepoStats />);
-  // });
-  //
-  // test("Initially shows the loading indicator", () => {
-  //   render(<GithubRepoStats />);
-  //
-  //   expect(screen.getByText(/loading/i)).toBeInTheDocument();
-  // });
+  // The following tests need to be skipped,
+  // because GithubRepoStats does not support being unmounted
+  xtest("Smoke Test", () => {
+    render(<GithubRepoStats />);
+  });
+
+  xtest("Initially shows the loading indicator", () => {
+    render(<GithubRepoStats />);
+
+    expect(screen.getByText(/loading/i)).toBeInTheDocument();
+  });
 
   test("The loading indicator should disappear", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactSuccessMock);

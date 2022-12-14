@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const Clock: React.FunctionComponent = () => {
+interface Props {
+  intervalInMs?: number;
+}
+
+const Clock: React.FunctionComponent<Props> = ({ intervalInMs = 300 }) => {
   const [timeString, setTimeString] = useState<string>(
     new Date().toLocaleTimeString()
   );
@@ -9,12 +13,12 @@ const Clock: React.FunctionComponent = () => {
     const intervalId = setInterval(() => {
       console.log("Interval läuft");
       setTimeString(new Date().toLocaleTimeString());
-    }, 300);
+    }, intervalInMs);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [intervalInMs]);
 
   return <div>{timeString}</div>;
 };

@@ -13,8 +13,13 @@ const Toggle: React.FunctionComponent = () => {
       >
         {state ? "On" : "Off"}
       </button>
+      <div style={{ border: "1px solid pink" }}>
+        Togglable Clock: {state && <Clock />}
+      </div>
 
-      {state && <Clock />}
+      <div style={{ border: "1px solid green" }}>
+        Slow-Down Clock: <Clock intervalInMs={state ? 5000 : 300} />
+      </div>
     </div>
   );
 };

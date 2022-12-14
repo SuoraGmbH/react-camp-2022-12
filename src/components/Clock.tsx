@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 const Clock: React.FunctionComponent = () => {
-  const [date, setDate] = useState<Date>(new Date());
+  const [timeString, setTimeString] = useState<string>(
+    new Date().toLocaleTimeString()
+  );
 
   useEffect(() => {
     setInterval(() => {
-      setDate(new Date());
-    }, 1000);
+      setTimeString(new Date().toLocaleTimeString());
+    }, 300);
   }, []);
 
-  return <div>{date.toLocaleTimeString()}</div>;
+  return <div>{timeString}</div>;
 };
 
 export default Clock;

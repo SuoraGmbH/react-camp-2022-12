@@ -3,19 +3,7 @@ import GithubRepoStats from "./GithubRepoStats";
 import { setupServer } from "msw/node";
 import { githubRepoFacebookReactSuccessMock } from "../../mocks/api.github.com/repos/facebook/react/success";
 import { githubRepoFacebookReactRateLimitMock } from "../../mocks/api.github.com/repos/facebook/react/rateLimit";
-
-const mockServer = setupServer();
-beforeAll(() => {
-  mockServer.listen({ onUnhandledRequest: "error" });
-});
-
-beforeEach(() => {
-  mockServer.resetHandlers();
-});
-
-afterAll(() => {
-  mockServer.close();
-});
+import { mockServer } from "../setupTests";
 
 describe("<GithubRepoStats />", () => {
   // The following tests need to be skipped,

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GithubRepoStats /> Display an error if we are rate limitted 1`] = `
+<div>
+  <div>
+    Loading…
+  </div>
+</div>
+`;
+
+exports[`<GithubRepoStats /> The number of stargazers should be visible 1`] = `
+<div>
+  <div>
+    facebook/react hat 
+    199045
+     stars
+  </div>
+</div>
+`;

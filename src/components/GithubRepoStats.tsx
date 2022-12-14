@@ -18,6 +18,7 @@ const GithubRepoStats: React.FunctionComponent = () => {
           setError(data?.message || "Something went wrong");
           return;
         }
+
         setError(undefined);
         setRepoData(data);
       });

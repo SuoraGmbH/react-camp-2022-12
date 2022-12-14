@@ -9,7 +9,6 @@ const GithubRepoStats: React.FunctionComponent = () => {
       response
     ) {
       response.json().then(function (data: GithubRepoData) {
-        console.log(data);
         setRepoData(data);
       });
     });

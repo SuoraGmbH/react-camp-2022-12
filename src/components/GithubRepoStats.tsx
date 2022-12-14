@@ -1,32 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { GithubRepoData } from "../domain/GithubRepoData";
+import useGithubRepoStats from "../hooks/useGithubRepoStats";
 
-const GithubRepoStats: React.FunctionComponent = () => {
-  const [repoData, setRepoData] = useState<GithubRepoData>();
-  const [error, setError] = useState<string>();
+interface Props {
+  repoName: string;
+}
 
-  useEffect(() => {
-    fetch("https://api.github.com/repos/facebook/react").then(function (
-      response
-    ) {
-      response.json().then(function (data: GithubRepoData) {
-        if (response.status !== 200) {
-          setRepoData(undefined);
-          // I need to ignore a typescript error here,
-          // because our typings do not contain the error case
-          // @ts-expect-error
-          setError(data?.message || "Something went wrong");
-          return;
-        }
-
-        setError(undefined);
-        setRepoData(data);
-      });
-    });
-  }, []);
+const GithubRepoStats: React.FunctionComponent<Props> = ({ repoName }) => {
+  const { repoData, error } = useGithubRepoStats(repoName);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        Error for repo {repoName}: {error}
+      </div>
+    );
   }
 
   if (!repoData) {

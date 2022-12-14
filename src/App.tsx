@@ -5,6 +5,7 @@ import TimeEntryList from "./components/TimeEntryList";
 import Clock from "./components/Clock";
 import Toggle from "./components/Toggle";
 import ClockWithHook from "./components/ClockWithHook";
+import GithubRepoStats from "./components/GithubRepoStats";
 
 // Example on how to get the type of props of a component
 // const welcomeProps: ComponentProps<typeof Welcome> = { city: "some city" };
@@ -24,6 +25,7 @@ function App() {
       <TimeEntryForm onAddTimeEntry={handleAddTimeEntry} />
       <hr />
       <ClockWithHook />
+      <GithubRepoStats repoName="facebook/reahuisduhdasuosct" />
     </div>
   );
 }

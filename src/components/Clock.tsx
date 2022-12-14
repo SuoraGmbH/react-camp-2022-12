@@ -6,9 +6,14 @@ const Clock: React.FunctionComponent = () => {
   );
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
+      console.log("Interval läuft");
       setTimeString(new Date().toLocaleTimeString());
     }, 300);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return <div>{timeString}</div>;

@@ -4,7 +4,6 @@ import {
   waitForElementToBeRemoved,
 } from "@testing-library/react";
 import GithubRepoStats from "./GithubRepoStats";
-import { setupServer } from "msw/node";
 import { githubRepoFacebookReactSuccessMock } from "../../mocks/api.github.com/repos/facebook/react/success";
 import { githubRepoFacebookReactRateLimitMock } from "../../mocks/api.github.com/repos/facebook/react/rateLimit";
 import { mockServer } from "../setupTests";
@@ -26,8 +25,9 @@ describe("<GithubRepoStats />", () => {
     mockServer.resetHandlers(githubRepoFacebookReactSuccessMock);
     render(<GithubRepoStats />);
 
-    await screen.findByText(/facebook\/react/i);
+    await waitForElementToBeRemoved(() => screen.queryByText(/loading/i));
   });
+
   test("The number of stargazers should be visible", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactSuccessMock);
     const { container } = render(<GithubRepoStats />);

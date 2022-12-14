@@ -12,25 +12,25 @@ describe("<GithubRepoStats />", () => {
   // The following tests need to be skipped,
   // because GithubRepoStats does not support being unmounted
   xtest("Smoke Test", () => {
-    render(<GithubRepoStats />);
+    render(<GithubRepoStats repoName="facebook/react" />);
   });
 
   xtest("Initially shows the loading indicator", () => {
-    render(<GithubRepoStats />);
+    render(<GithubRepoStats repoName="facebook/react" />);
 
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
   test("The loading indicator should disappear", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactSuccessMock);
-    render(<GithubRepoStats />);
+    render(<GithubRepoStats repoName="facebook/react" />);
 
     await waitForElementToBeRemoved(() => screen.queryByText(/loading/i));
   });
 
   test("The number of stargazers should be visible", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactSuccessMock);
-    const { container } = render(<GithubRepoStats />);
+    const { container } = render(<GithubRepoStats repoName="facebook/react" />);
 
     // Wait for loading indicator to disappear
     await screen.findByText(/facebook\/react/i);
@@ -40,7 +40,7 @@ describe("<GithubRepoStats />", () => {
 
   test("Display an error if we are rate limitted", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactRateLimitMock);
-    const { container } = render(<GithubRepoStats />);
+    const { container } = render(<GithubRepoStats repoName="facebook/react" />);
 
     await waitForElementToBeRemoved(() => screen.queryByText(/loading/i));
 

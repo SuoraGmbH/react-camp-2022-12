@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const Clock: React.FunctionComponent = () => {
+const useCurrentTime = () => {
   const [timeString, setTimeString] = useState<string>(
     new Date().toLocaleTimeString()
   );
@@ -15,7 +15,7 @@ const Clock: React.FunctionComponent = () => {
     };
   }, []);
 
-  return <div>{timeString}</div>;
+  return timeString;
 };
 
-export default Clock;
+export default useCurrentTime;

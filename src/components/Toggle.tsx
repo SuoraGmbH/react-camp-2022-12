@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Clock from "./Clock";
+import useToggle from "../hooks/useToggle";
 
 const Toggle: React.FunctionComponent = () => {
-  const [state, setState] = useState(true);
+  const [state, toggle] = useToggle(true);
 
   return (
     <div>
       <button
         onClick={() => {
-          setState(!state);
+          toggle();
         }}
       >
         {state ? "On" : "Off"}

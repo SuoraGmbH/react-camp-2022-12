@@ -3,10 +3,11 @@ import Clock from "./Clock";
 import useToggle from "../hooks/useToggle";
 
 const Toggle: React.FunctionComponent = () => {
-  const [state, toggle] = useToggle(true);
+  const { isActive: state, reset, toggle } = useToggle(true);
 
   return (
     <div>
+      <button onClick={reset}>Reset</button>
       <button
         onClick={() => {
           toggle();

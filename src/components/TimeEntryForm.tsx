@@ -1,9 +1,25 @@
 import React, { useState } from "react";
 import { TimeEntry } from "../domain/TimeEntry";
+import Button from "./ui/Button";
+import styled from "styled-components";
 
 interface Props {
   onAddTimeEntry: (timeEntry: TimeEntry) => void;
 }
+
+const Form = styled.form`
+  border: 1px solid pink;
+`;
+
+// This is an entirely new button
+const SomeButton = styled.button`
+  border-radius: 20px;
+`;
+
+// This button customizes our imported button
+const CustomizedButton = styled(Button)`
+  border-radius: 20px;
+`;
 
 const TimeEntryForm: React.FunctionComponent<Props> = ({ onAddTimeEntry }) => {
   const [inputValue, setInputValue] = useState("");
@@ -26,14 +42,14 @@ const TimeEntryForm: React.FunctionComponent<Props> = ({ onAddTimeEntry }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
         Comment:
         <input onChange={handleChange} value={inputValue} />
       </label>
       {inputValue}
-      <button type="submit">Submit</button>
-    </form>
+      <CustomizedButton type="submit">Submit</CustomizedButton>
+    </Form>
   );
 };
 

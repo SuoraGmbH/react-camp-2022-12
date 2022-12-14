@@ -1,5 +1,5 @@
 import React from "react";
-import { TimeEntry } from "../domain/TimeEntry";
+import { TimeEntry } from "./TimeEntry";
 
 interface Props {
   timeEntry: TimeEntry;

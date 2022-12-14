@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GithubRepoData } from "../domain/GithubRepoData";
-import useGithubRepoStats from "../hooks/useGithubRepoStats";
+import { GithubRepoData } from "./GithubRepoData";
+import useGithubRepoStats from "./useGithubRepoStats";
 
 interface Props {
   repoName: string;

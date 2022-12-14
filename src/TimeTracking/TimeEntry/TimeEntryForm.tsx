@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { TimeEntry } from "../domain/TimeEntry";
-import Button from "./ui/Button";
+import { TimeEntry } from "./TimeEntry";
+import Button from "../../components/Button";
 import styled from "styled-components";
 
 interface Props {

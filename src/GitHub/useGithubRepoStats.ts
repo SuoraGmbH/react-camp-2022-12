@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GithubRepoData } from "../domain/GithubRepoData";
+import { GithubRepoData } from "./GithubRepoData";
 
 const useGithubRepoStats = (repoName: string) => {
   const [repoData, setRepoData] = useState<GithubRepoData>();

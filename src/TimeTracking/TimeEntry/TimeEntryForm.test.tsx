@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import TimeEntryForm from "./TimeEntryForm";
 import userEvent from "@testing-library/user-event";
-import { TimeEntry } from "../domain/TimeEntry";
+import { TimeEntry } from "./TimeEntry";
 
 describe("<TimeEntryForm />", () => {
   test("Smoke Test", () => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Clock from "./Clock";
-import useToggle from "../hooks/useToggle";
+import Clock from "../Clock/Clock";
+import useToggle from "./useToggle";
 
 const Toggle: React.FunctionComponent = () => {
   const { isActive: state, reset, toggle } = useToggle(true);

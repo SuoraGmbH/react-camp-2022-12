@@ -3,7 +3,9 @@
 exports[`<GithubRepoStats /> Display an error if we are rate limitted 1`] = `
 <div>
   <div>
-    Error: 
+    Error for repo 
+    facebook/react
+    : 
     API rate limit exceeded for 93.245.109.13. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
   </div>
 </div>

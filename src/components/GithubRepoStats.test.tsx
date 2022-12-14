@@ -1,4 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import GithubRepoStats from "./GithubRepoStats";
 import { setupServer } from "msw/node";
 import { githubRepoFacebookReactSuccessMock } from "../../mocks/api.github.com/repos/facebook/react/success";
@@ -37,6 +41,8 @@ describe("<GithubRepoStats />", () => {
   test("Display an error if we are rate limitted", async () => {
     mockServer.resetHandlers(githubRepoFacebookReactRateLimitMock);
     const { container } = render(<GithubRepoStats />);
+
+    await waitForElementToBeRemoved(() => screen.queryByText(/loading/i));
 
     expect(container).toMatchSnapshot();
   });
